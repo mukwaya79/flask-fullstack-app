@@ -1,0 +1,38 @@
+{% extends 'layout.html' %}
+
+{% block body %}
+<div class="container mt-3">
+  <span><i class="fa fa-user-o" aria-hidden="true"></i> </span>
+    <h3 class="text-center">
+        Login
+    </h3>
+    <form method ="POST" action="{{url_for('login')}}">
+        <div class="form-group">
+          {{ form.username.label(class="form-control-label") }}
+          {{ form.username(class="form-control") }}
+         
+        </div>
+        <div class="form-group">
+          {{ form.password.label(class="form-control-label") }}
+          {{ form.password(class="form-control") }}
+        </div>
+        <div >
+          {{ form.submit(class='btn btn-primary btn-md')}}
+        </div>
+      </form>
+      <br>
+      <div class="card card-body bg-outline-info">
+        demo account:
+        <hr>
+        username: mugisha |
+        password: mugisha  |
+        role: admin
+        <br>
+        username: edward |
+        password: edward  |
+        role: user
+      </div>
+      
+</div>
+{% endblock %}
+

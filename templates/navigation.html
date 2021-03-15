@@ -1,0 +1,24 @@
+{% extends 'layout.html' %}
+{% block body %}
+<div class="container mt-3">
+    <span><i class="fa fa-user-o" aria-hidden="true"></i> </span>
+    <h3 class="text-center">
+        Available Data
+    </h3>
+    <div class="card">
+        <div class="card-body">
+            <a href="{{ url_for('oilinfo') }}">Oil Info</a>
+        </div>
+        <hr>
+        <div class="card-body">
+            <a href="{{ url_for('oilsample') }}">Oil Sample</a>
+        </div>
+        <hr>
+        <div class="card-body">
+            <a href="{{ url_for('corebase') }}">Core base</a>
+        </div>
+    </div>
+    
+</div>
+<hr>
+{% endblock %}

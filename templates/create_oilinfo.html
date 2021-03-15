@@ -1,0 +1,44 @@
+{% extends 'layout.html' %}
+{% block body %}
+<div class="container mt-3">
+    <span><i class="fa fa-user-o" aria-hidden="true"></i> </span>
+    <h3 class="text-center">
+        Add Oil info Data
+    </h3>
+    <a href="{{url_for('navigation')}}" class='btn btn-secondary float-right '>Back</a>
+    <br>
+    <form method ="POST" action="{{url_for('new_oilinfo')}}">
+        <div class="form-group">
+          {{ form.wellname.label(class="form-control-label") }}
+          {{ form.wellname(class="form-control") }}
+         
+        </div>
+        <div class="form-group">
+          {{ form.sampletype.label(class="form-control-label") }}
+          {{ form.sampletype(class="form-control") }}
+        </div>
+        <div class="form-group">
+            {{ form.layer.label(class="form-control-label") }}
+            {{ form.layer(class="form-control") }}
+          </div>
+        <div class="form-group">
+            {{ form.initialdepth.label(class="form-control-label") }}
+            {{ form.initialdepth(class="form-control") }}
+          </div>
+          <div class="form-group">
+            {{ form.terminationdepth.label(class="form-control-label") }}
+            {{ form.terminationdepth(class="form-control") }}
+          </div>
+          <div class="form-group">
+            {{ form.samplebucket.label(class="form-control-label") }}
+            {{ form.samplebucket(class="form-control") }}
+          </div>
+          
+        <div >
+          {{ form.submit(class='btn btn-primary btn-md')}}
+        </div>
+      </form>
+      
+</div>
+{% endblock %}
+

@@ -1,0 +1,48 @@
+{% extends 'layout.html' %}
+{% block body %}
+<div class="container mt-3">
+    <span><i class="fa fa-user-o" aria-hidden="true"></i> </span>
+    <h3 class="text-center">
+        Welcome to Corebase Data
+    </h3>
+    <hr>
+    <a href="{{url_for('navigation')}}" class='btn btn-secondary '>Back</a>
+    <a href="{{url_for('new_corebase')}}" class='btn btn-primary float-right'>Add Data</a>
+    <br><br>
+    <table class='table table-striped'>
+        <tr>
+            <th>Id</th>
+            <th> oilname</th>
+            <th>wellname</th>
+            <th>Batch No.</th>
+            <th>coretimes</th>
+            <th>Top depth(m)</th>
+            <th>Bottom depth(m)</th>
+            <th>coretotallength</th>
+            <th>harvestrate</th>
+            <th>Record date</th>
+            <th></th>
+            <th></th>
+        </tr>
+         {% for info in infos %}
+           <tr>
+               <td>{{info.id}}</td>
+               <td>{{info.oilname}}</td>
+               <td>{{info.wellname}}</td>
+               <td>{{info.batchno}}</td>
+               <td>{{info.coretimes}}</td>
+               <td>{{info.topdepth}}</td>
+               <td>{{info.bottomdepth}}</td>
+               <td>{{info.coretotallength}}</td>
+               <td>{{info.harvestrate}}</td>
+               <td>{{info.recorddate.strftime('%d-%m-%Y')}}</td>
+               {% if current_user.role == 'admin' %}
+               <td><a href="/corebase/{{info.id}}/update" class='btn btn-success'>Edit</a></td>
+               <td><a href="/corebase/delete/{{info.id}}" class='btn btn-danger' onclick= "return confirm('Do you really want to delete ?');">Delete</a></td>
+               {% endif %}
+           </tr>
+         {% endfor %}
+
+    </table>
+</div>
+{% endblock %}

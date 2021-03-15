@@ -1,0 +1,32 @@
+{% extends 'layout.html' %}
+
+{% block body %}
+<div class="container mt-3">
+    <span><i class="fa fa-user-o" aria-hidden="true"></i> </span>
+    <h3 class="text-center">
+        Update OilSample Data
+    </h3>
+    <a href="{{url_for('navigation')}}" class='btn btn-secondary float-right '>Back</a>
+    <br>
+    <form method ="POST" action="/oilsample/{{oilsample1.id}}/update">
+        <div class="form-group">
+            <label for="oilname">oilname</label>
+            <input type="text" name='oilname' class="form-control"  value='{{oilsample1.oilname}}' required>
+         
+        </div>
+        <div class="form-group">
+            <label for="wellname">wellname</label>
+            <input type="text" name ='wellname' class="form-control"  value='{{oilsample1.wellname}}' required>
+        </div>
+        <div class="form-group">
+            <label for="batchno">batchno</label>
+            <input type="number" step="any"  name='batchno' class="form-control"  value='{{oilsample1.batchno}}' required>
+         
+          
+        <div >
+            <button type="submit" class="btn btn-primary mb-2">submit</button>
+        </div>
+      </form>
+      
+</div>
+{% endblock %}

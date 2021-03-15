@@ -1,0 +1,51 @@
+{% extends 'layout.html' %}
+
+{% block body %}
+<div class="container mt-3">
+    <span><i class="fa fa-user-o" aria-hidden="true"></i> </span>
+    <h3 class="text-center">
+        Update Corebase info
+    </h3>
+    <a href="{{url_for('navigation')}}" class='btn btn-secondary float-right '>Back</a>
+    <br>
+    <form method ="POST" action="/corebase/{{corebase1.id}}/update">
+        <div class="form-group">
+            <label for="oilname">oilname</label>
+            <input type="text" name='oilname' class="form-control"  value='{{corebase1.oilname}}' required>
+         
+        </div>
+        <div class="form-group">
+            <label for="wellname">wellname</label>
+            <input type="text" name ='wellname' class="form-control"  value='{{corebase1.wellname}}' required>
+        </div>
+        <div class="form-group">
+            <label for="coretimes">coretimes</label>
+            <input type="number" step="any" name='coretimes' class="form-control"  value='{{corebase1.coretimes}}' required>
+          </div>
+          <div class="form-group">
+            <label for="topdepth">topdepth</label>
+            <input type="number" step="any" class="form-control" name='topdepth' value='{{corebase1.topdepth}}' required>
+          </div>
+          <div class="form-group">
+            <label for="bottomdepth">bottomdepth</label>
+            <input type="number" step="any" name='bottomdepth' class="form-control"  value='{{corebase1.bottomdepth}}' required>
+          </div>
+          <div class="form-group">
+            <label for="coretotallength">coretotallength</label>
+            <input type="number" step="any" class="form-control" name='coretotallength' value='{{corebase1.coretotallength}}' required>
+          </div>
+          <div class="form-group">
+            <label for="harvestrate">harvestrate</label>
+            <input type="number" step="any" class="form-control" name='harvestrate' value='{{corebase1.harvestrate}}' required>
+          </div>
+        <div class="form-group">
+            <label for="batchno">batchno</label>
+            <input type="number" step="any" class="form-control" name='batchno' value='{{corebase1.batchno}}' required>
+          </div>
+        <div >
+            <button type="submit" class="btn btn-primary mb-2">submit</button>
+        </div>
+      </form>
+      
+</div>
+{% endblock %}

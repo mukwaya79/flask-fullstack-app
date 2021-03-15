@@ -1,0 +1,44 @@
+{% extends 'layout.html' %}
+
+{% block body %}
+<div class="container mt-3">
+    <span><i class="fa fa-user-o" aria-hidden="true"></i> </span>
+    <h3 class="text-center">
+        Update Oilinfo Data
+    </h3>
+    <a href="{{url_for('navigation')}}" class='btn btn-secondary float-right '>Back</a>
+    <br>
+    <form method ="POST" action="/oilinfo/{{oilinfo1.id}}/update">
+        <div class="form-group">
+            <label for="wellname">wellname</label>
+            <input type="text" name='wellname' class="form-control"  value='{{oilinfo1.wellname}}' required>
+         
+        </div>
+        <div class="form-group">
+            <label for="sampletype">sampletype</label>
+            <input type="text" name ='sampletype' class="form-control"  value='{{oilinfo1.sampletype}}' required>
+        </div>
+        <div class="form-group">
+            <label for="layer">layer</label>
+            <input type="text"  name='layer' class="form-control"  value='{{oilinfo1.layer}}' required>
+          </div>
+          <div class="form-group">
+            <label for="initialdepth">initialdepth</label>
+            <input type="number" step="any" class="form-control" name='initialdepth' value='{{oilinfo1.initialdepth}}' required>
+          </div>
+          <div class="form-group">
+            <label for="terminationdepth">terminationdepth</label>
+            <input type="number" step="any" name='terminationdepth' class="form-control"  value='{{oilinfo1.terminationdepth}}' required>
+          </div>
+          <div class="form-group">
+            <label for="samplebucket">samplebucket</label>
+            <input type="text" class="form-control" name='samplebucket' value='{{oilinfo1.samplebucket}}' required>
+          </div>
+          
+        <div >
+            <button type="submit" class="btn btn-primary mb-2">submit</button>
+        </div>
+      </form>
+      
+</div>
+{% endblock %}

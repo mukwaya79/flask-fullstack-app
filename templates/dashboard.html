@@ -1,0 +1,12 @@
+
+{% extends 'layout.html' %}
+
+{% block body %}
+<div class="jumbotron container mt-4 animate">
+    <h3 class='lead display-4'>Geological Samples Info Platform</h3>
+    <hr>
+    <h4 class='lead text-center'>Welcome back {{current_user.username }}!!! </h4>
+    <a href="{{url_for('navigation')}}" type='button' class='btn btn-primary justify-content-center'>Navigation</a>
+  </div>
+{% endblock %}
+ 
